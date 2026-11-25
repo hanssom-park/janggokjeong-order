@@ -10,24 +10,19 @@
 </style>
 </head><body><div class="shell">
 <header class="hero"><div class="eyebrow">JANGGOKJEONG · CHINESE KITCHEN</div><div class="brand">장곡정</div><div class="subbrand">중식의 맛, 주문은 간편하게</div><p>짜장면부터 바삭한 탕수육까지<br>오늘도 장곡정에서 맛있게 즐기세요.</p><div class="pill">✦ 배달 · 포장 주문 안내</div></header>
-<main class="content"><div class="section-kicker">QUICK ORDER</div><h1 class="section-title">원하는 앱에서 주문하세요</h1><p class="notice">주문 앱으로 이동한 뒤 메뉴와 배달·포장 여부를 선택해 주세요.</p>
+<main class="content"><div class="section-kicker">QUICK ORDER</div><h1 class="section-title">원하는 앱에서 주문하세요 · 4개 앱 연결 완료</h1><p class="notice">주문 앱으로 이동한 뒤 메뉴와 배달·포장 여부를 선택해 주세요.</p>
 <div id="channels"><a class="channel primary" href="https://s.baemin.com/QI000gjGRXo2v" target="_blank" rel="noopener noreferrer" data-channel="baemin"><span class="symbol" aria-hidden="true">🛵</span><span class="copy"><strong>배달의민족</strong><small>장곡정 매장으로 바로 이동</small></span><span class="arrow" aria-hidden="true">↗</span></a>
-<button type="button" class="channel disabled" disabled><span class="symbol">🛍️</span><span class="copy"><strong>쿠팡이츠</strong><small>매장 링크 연결 예정</small></span><span class="arrow">—</span></button>
-<button type="button" class="channel disabled" disabled><span class="symbol">🍜</span><span class="copy"><strong>요기요</strong><small>매장 링크 연결 예정</small></span><span class="arrow">—</span></button>
-<button type="button" class="channel disabled" disabled><span class="symbol">🥢</span><span class="copy"><strong>땡겨요</strong><small>매장 링크 연결 예정</small></span><span class="arrow">—</span></button></div>
+<a class="channel" href="https://web.coupangeats.com/share?storeId=584946&amp;dishId&amp;key=0da73f9d-07e2-4949-a882-6f5e700207c7" target="_blank" rel="noopener noreferrer"><span class="symbol">🛍️</span><span class="copy"><strong>쿠팡이츠</strong><small>장곡정 주문 페이지 열기</small></span><span class="arrow">↗</span></a>
+<a class="channel" href="https://ws.yogiyo.co.kr/og3sams" target="_blank" rel="noopener noreferrer"><span class="symbol">🍜</span><span class="copy"><strong>요기요</strong><small>장곡정 주문 페이지 열기</small></span><span class="arrow">↗</span></a>
+<a class="channel" href="https://fdofd.ddangyo.com/gateway1.html?4sPiZYF" target="_blank" rel="noopener noreferrer"><span class="symbol">🥢</span><span class="copy"><strong>땡겨요</strong><small>장곡정 주문 페이지 열기</small></span><span class="arrow">↗</span></a></div>
 <div class="banner"><strong>💚 다음 주문은 더 간편하게!</strong><p>이 페이지를 홈 화면에 추가하거나 링크를 저장해 두세요. NFC 카드를 갖다 대거나 QR코드를 스캔해도 다시 방문할 수 있습니다.</p></div>
 <div class="utility"><button id="share" type="button">↗ 주문 페이지 공유</button><button id="copy" type="button">▣ 주소 복사</button></div></main>
 <footer class="foot">장곡정 · 배달 및 포장 주문 안내<br>주문·결제는 선택한 배달 플랫폼에서 진행됩니다.</footer>
 </div>
 <script>
-/* 관리자 설정: 각 주문 플랫폼의 공유 URL */
-const STORES={coupang:'https://web.coupangeats.com/share?storeId=584946&dishId&key=0da73f9d-07e2-4949-a882-6f5e700207c7',ddangyo:'https://fdofd.ddangyo.com/gateway1.html?4sPiZYF',yogiyo:'https://ws.yogiyo.co.kr/og3sams'};
-const channelData=[{id:'coupang',name:'쿠팡이츠',icon:'🛍️'},{id:'ddangyo',name:'땡겨요',icon:'🥢'},{id:'yogiyo',name:'요기요',icon:'🍜'}];
-for(const item of channelData){const url=STORES[item.id];if(!/^https:\/\//.test(url))continue;const nodes=document.querySelectorAll('#channels .channel.disabled');const old=Array.from(nodes).find(n=>n.textContent.includes(item.name));if(!old)continue;const a=document.createElement('a');a.className='channel';a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.dataset.channel=item.id;a.innerHTML=`<span class="symbol">${item.icon}</span><span class="copy"><strong>${item.name}</strong><small>장곡정 주문 페이지 열기</small></span><span class="arrow">↗</span>`;old.replaceWith(a);}
 function currentAddress(){return location.protocol==='file:'?'https://hanssom-park.github.io/janggokjeong-order/':location.href}
 async function copyAddress(){try{await navigator.clipboard.writeText(currentAddress());document.querySelector('#copy').textContent='✓ 복사 완료'}catch{window.prompt('아래 주소를 복사하세요',currentAddress())}}
 document.querySelector('#copy').addEventListener('click',copyAddress);
 document.querySelector('#share').addEventListener('click',async()=>{const u=currentAddress();if(navigator.share){try{await navigator.share({title:'장곡정 주문하기',url:u})}catch{}}else await copyAddress()});
 /* 통계: 본 파일 자체에는 서버 수집 기능이 없습니다. 공개 방문 통계는 별도 분석 서비스 연결이 필요합니다. */
 </script></body></html>
-
